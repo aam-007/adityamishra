@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Mishra</title>
+    <style>
+        :root {
+            /* Classic Paper Theme */
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --link-color: #0000EE;       /* Netscape Blue */
+            --visited-color: #551A8B;    /* Netscape Purple */
+            --active-color: #FF0000;
+            --hr-color: #000000;
+        }
+
+        body.retro-dark {
+            /* Terminal Theme */
+            --bg-color: #000000;
+            --text-color: #00FF00;       /* Phosphor Green */
+            --link-color: #00FF00;
+            --visited-color: #008F11;
+            --active-color: #FFFFFF;
+            --hr-color: #00FF00;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            /* Disable font smoothing for that crisp, jagged 90s look */
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .content-wrapper {
+            max-width: 600px;
+            margin: 10vh auto 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* The Classic Horizontal Rule */
+        hr {
+            border: 0;
+            border-top: 2px solid var(--hr-color);
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 14pt;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: var(--visited-color);
+        }
+
+        a:active {
+            color: var(--active-color);
+        }
+
+        a:hover {
+            text-decoration: none; /* Classic hover effect was often just removing underline */
+        }
+
+        /* Footer / Toggle Section */
+        .footer {
+            margin-top: 80px;
+            font-size: 10pt;
+            font-family: "Courier New", Courier, monospace; /* Monospace for metadata */
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-family: "Courier New", Courier, monospace;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 0;
+        }
+
+        .toggle-btn:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        
+        <h1>Aditya Mishra</h1>
+        
+        <hr>
+
+        <div class="menu">
+            <a href="Resume/AdityaMishra.pdf">Resume</a>
+            <a href="Repository%20of%20Research/repo.html">Repository of Research</a>
+        </div>
+
+        <div class="footer">
+            <p>Last Updated: Dec 24, 2025</p>
+            <button class="toggle-btn" onclick="toggleMode()">[ Switch to Terminal Mode ]</button>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const btn = document.querySelector('.toggle-btn');
+            
+            body.classList.toggle('retro-dark');
+            
+            if (body.classList.contains('retro-dark')) {
+                btn.innerText = "[ Switch to Paper Mode ]";
+                localStorage.setItem('theme', 'terminal');
+            } else {
+                btn.innerText = "[ Switch to Terminal Mode ]";
+                localStorage.setItem('theme', 'paper');
+            }
+        }
+
+        // Persist theme
+        if (localStorage.getItem('theme') === 'terminal') {
+            document.body.classList.add('retro-dark');
+            document.querySelector('.toggle-btn').innerText = "[ Switch to Paper Mode ]";
+        }
+    </script>
+
+</body>
+</html>
