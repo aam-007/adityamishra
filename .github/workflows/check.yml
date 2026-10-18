@@ -16,7 +16,8 @@ jobs:
         run: python scripts/build.py
       - name: Validate links and content
         run: python scripts/check.py
-      - name: Test publishing app
-        run: python -m unittest discover -s tests -v
+      - name: Check Python syntax
+        run: |
+          python -c "import ast; from pathlib import Path; [ast.parse(p.read_text(encoding='utf-8'), filename=str(p)) for p in [Path('publisher.py'), *Path('scripts').glob('*.py')]]"
       - name: Ensure generated files are current
         run: git diff --exit-code

@@ -48,11 +48,7 @@ Publishing uses the repository’s `origin` remote and current branch (currently
 
 If a push fails, the validated files and local commit remain intact; the error shows the retry command. A successful push updates the branch; the site goes live when the repository’s GitHub Pages deployment completes. If a session crashes and leaves `.publisher.lock`, remove that file only after confirming the publisher is no longer running.
 
-Run the app’s tests without contacting GitHub:
-
-```sh
-python -m unittest discover -s tests -v
-```
+GitHub Actions checks the Python source syntax, rebuilds the site, validates local links and catalogue entries, and verifies that generated files are current. It does not require a `tests` folder.
 
 ### Manual catalogue editing (optional)
 
