@@ -4,149 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya Mishra</title>
-    <style>
-        :root {
-            /* Classic Paper Theme */
-            --bg-color: #ffffff;
-            --text-color: #000000;
-            --link-color: #0000EE;       /* Netscape Blue */
-            --visited-color: #551A8B;    /* Netscape Purple */
-            --active-color: #FF0000;
-            --hr-color: #000000;
-        }
-
-        body.retro-dark {
-            /* Terminal Theme */
-            --bg-color: #000000;
-            --text-color: #00FF00;       /* Phosphor Green */
-            --link-color: #00FF00;
-            --visited-color: #008F11;
-            --active-color: #FFFFFF;
-            --hr-color: #00FF00;
-        }
-
-        body {
-            font-family: "Times New Roman", Times, serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            /* Disable font smoothing for that crisp, jagged 90s look */
-            -webkit-font-smoothing: none;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .content-wrapper {
-            max-width: 600px;
-            margin: 10vh auto 0;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 24pt;
-            font-weight: bold;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* The Classic Horizontal Rule */
-        hr {
-            border: 0;
-            border-top: 2px solid var(--hr-color);
-            margin-bottom: 30px;
-            width: 100%;
-        }
-
-        .menu {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            font-size: 14pt;
-        }
-
-        a {
-            color: var(--link-color);
-            text-decoration: underline;
-        }
-
-        a:visited {
-            color: var(--visited-color);
-        }
-
-        a:active {
-            color: var(--active-color);
-        }
-
-        a:hover {
-            text-decoration: none; /* Classic hover effect was often just removing underline */
-        }
-
-        /* Footer / Toggle Section */
-        .footer {
-            margin-top: 80px;
-            font-size: 10pt;
-            font-family: "Courier New", Courier, monospace; /* Monospace for metadata */
-        }
-
-        .toggle-btn {
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-family: "Courier New", Courier, monospace;
-            cursor: pointer;
-            text-decoration: none;
-            padding: 0;
-        }
-
-        .toggle-btn:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-        }
-
-    </style>
+    <link rel="stylesheet" href="assets/original-bf9870346f.css">
+<link rel="stylesheet" href="assets/enhancements.css">
+<meta name="description" content="Aditya Mishra: financial research, portfolio theory, and data engineering. NMIMS MPSTME, Mumbai.">
+<link rel="canonical" href="https://aam-007.github.io/adityamishra/index.html">
+<meta property="og:title" content="Aditya Mishra"><meta property="og:description" content="Aditya Mishra: financial research, portfolio theory, and data engineering. NMIMS MPSTME, Mumbai."><meta property="og:type" content="website"><meta property="og:url" content="https://aam-007.github.io/adityamishra/index.html"><meta name="twitter:card" content="summary">
+<script src="assets/theme.js"></script><script src="assets/catalogue.js" defer></script>
+<link rel="stylesheet" href="assets/footer.css"><script src="assets/footer.js" defer></script>
+<script src="assets/surprise.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="content-wrapper">
-        
-        <h1>Aditya Mishra</h1>
-        
+    <main class="content-wrapper" id="main">
+
+        <h1><a class="name-link" id="contact-open" href="contact.html" aria-haspopup="dialog" aria-controls="contact-window">Aditya Mishra</a></h1>
+
         <hr>
 
-        <div class="menu">
+        <nav class="menu" aria-label="Research navigation">
             <a href="Resume/AdityaMishra.pdf">Resume</a>
             <a href="Repository%20of%20Research/repo.html">Repository of Research</a>
-        </div>
+        </nav>
 
         <div class="footer">
-            <button class="toggle-btn" onclick="toggleMode()">[ Switch to Terminal Mode ]</button>
+            <button class="toggle-btn" id="theme-toggle" aria-pressed="false" hidden>[ Switch to Terminal Mode ]</button>
         </div>
 
-    </div>
+    </main>
 
-    <script>
-        function toggleMode() {
-            const body = document.body;
-            const btn = document.querySelector('.toggle-btn');
-            
-            body.classList.toggle('retro-dark');
-            
-            if (body.classList.contains('retro-dark')) {
-                btn.innerText = "[ Switch to Paper Mode ]";
-                localStorage.setItem('theme', 'terminal');
-            } else {
-                btn.innerText = "[ Switch to Night Vision ]";
-                localStorage.setItem('theme', 'paper');
-            }
-        }
-
-        // Persist theme
-        if (localStorage.getItem('theme') === 'terminal') {
-            document.body.classList.add('retro-dark');
-            document.querySelector('.toggle-btn').innerText = "[ Switch to Paper Mode ]";
-        }
-    </script>
-
+<dialog id="contact-window" aria-labelledby="contact-title"><header class="window-header"><h2 id="contact-title">Aditya Mishra</h2><form method="dialog"><button class="window-close" aria-label="Close contact window" autofocus>[ Close ]</button></form></header><p class="introduction">I am pursuing a Master of Business Administration in Technology Management and Data Science at the engineering school of NMIMS, Mumbai. My interests span financial research, portfolio theory, and data engineering, informed by my experience as a research intern at Helios Capital.</p><h2 class="contact-heading">Contact</h2><p class="contact"><a href="mailto:adityamishra2007mum@gmail.com">adityamishra2007mum@gmail.com</a><br><a href="mailto:aditya.mishra10@nmims.in">aditya.mishra10@nmims.in</a></p></dialog>
+<script src="assets/contact.js" defer></script>
+<footer class="site-footlabel"><span class="footer-year" hidden><time data-current-year></time> · </span><a href="sitemap.html">Sitemap</a></footer>
 </body>
 </html>

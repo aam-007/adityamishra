@@ -1,0 +1,22 @@
+name: Check portfolio
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build pages
+        run: python scripts/build.py
+      - name: Validate links and content
+        run: python scripts/check.py
+      - name: Test publishing app
+        run: python -m unittest discover -s tests -v
+      - name: Ensure generated files are current
+        run: git diff --exit-code

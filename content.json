@@ -1,0 +1,474 @@
+{
+  "featured": [
+    "portfolio-study",
+    "conviction-framework",
+    "phonex-c0"
+  ],
+  "papers": [
+    {
+      "id": "asset-quality",
+      "path": "Repository of Research/Finance/Papers/2026/Statistical Digest of Asset Quality (2005-2025)/Statistical Digest of Asset Quality.pdf",
+      "title": "Statistical Digest of Asset Quality (2005–2025)",
+      "topic": "Finance",
+      "year": "2026",
+      "summary": "A statistical digest of asset quality covering 2005–2025."
+    },
+    {
+      "id": "paper-17",
+      "path": "Repository of Research/Finance/Papers/2026/Microeconomic Analysis of the Textile Industry in India/Microeconomic Analysis of the Textile Industry in India.pdf",
+      "title": "Microeconomic Analysis of the Textile Industry in India",
+      "topic": "Finance",
+      "year": "2026",
+      "summary": "A collaborative microeconomic study of India’s textile industry, with a firm-level assessment of Trent Limited."
+    },
+    {
+      "id": "paper-18",
+      "path": "Repository of Research/Finance/Papers/2026/Microeconomic Analysis of the Indian Iron & Steel Industry/MicroeconomicAnalysisof theIndianIron&Steel Industry.pdf",
+      "title": "Microeconomic Analysis of the Indian Iron & Steel Industry",
+      "topic": "Finance",
+      "year": "2026",
+      "summary": "A collaborative study of India’s iron and steel industry through Tata Steel, examining market structure, entry barriers, demand, and input costs."
+    },
+    {
+      "id": "paper-20",
+      "path": "Repository of Research/Finance/Papers/2026/Mapping Mister Market/paper.pdf",
+      "title": "Mapping Mister Market",
+      "topic": "Finance",
+      "year": "2026",
+      "summary": "A regime-based study of the NIFTY 500 from 1990–2026, using volatility and drawdown thresholds to compare periods of peace and turmoil."
+    },
+    {
+      "id": "paper-13",
+      "path": "Repository of Research/Finance/Papers/2026/HOW TO SAVE A BANK/HOW TO SAVE A BANK.pdf",
+      "title": "How To Save a Bank",
+      "topic": "Finance",
+      "year": "2026",
+      "summary": "A collaborative framework for responding to bank liquidity and solvency crises, from early detection to restructuring or orderly resolution."
+    },
+    {
+      "id": "paper-21",
+      "path": "Repository of Research/Finance/Papers/2026/cost of hope/cost of hope.pdf",
+      "title": "Fool's Paradise",
+      "topic": "Finance",
+      "year": "2026",
+      "summary": "An essay on speculation, hope, and participation in India’s derivatives market."
+    },
+    {
+      "id": "paper-15",
+      "path": "Repository of Research/Finance/Papers/2026/Building the  next JPM/building the next jpm.pdf",
+      "title": "Building The Next J.P. Morgan",
+      "topic": "Finance",
+      "year": "2026",
+      "summary": "A collaborative proposal for a global banking institution, focused on capital strength, governance, risk control, and institutional longevity."
+    },
+    {
+      "id": "paper-14",
+      "path": "Repository of Research/Finance/Papers/2026/BUILDING THE NEXT BLACKROCK/BUILDING THE NEXT BLACKROCK.pdf",
+      "title": "Building The Next BlackRock",
+      "topic": "Finance",
+      "year": "2026",
+      "summary": "A collaborative examination of how scale, indexing, risk management, and financial infrastructure shape institutional influence."
+    },
+    {
+      "id": "budget-2026",
+      "path": "Repository of Research/Finance/Papers/2026/An Appraisal of the Union Budget 2026–27/An Appraisal of the Union Budget 2026–27.pdf",
+      "title": "An Appraisal of the Union Budget 2026–27",
+      "topic": "Finance",
+      "year": "2026",
+      "summary": "An appraisal of India’s Union Budget for 2026–27."
+    },
+    {
+      "id": "portfolio-study",
+      "path": "Repository of Research/Finance/Papers/2026/Portfolio Study/paper.pdf",
+      "title": "A Comparative Study of Traditional and Modern Approaches to Portfolio Construction and Performance Evaluation",
+      "topic": "Finance",
+      "year": "2026",
+      "summary": "A comparison of traditional and modern portfolio construction and performance evaluation, based on nine large-cap Indian equities. SSRN preprint, April 2026."
+    },
+    {
+      "id": "paper-7",
+      "path": "Repository of Research/Finance/Papers/2025/The Irrelevance of Economics in the Business of Investing/The Irrelevance of Economics in the Business of Investing.pdf",
+      "title": "The Irrelevance of Economics in the Business of Investing",
+      "topic": "Finance",
+      "year": "2025",
+      "summary": "An argument for business-level analysis, cash flows, and management judgment over broad economic forecasting in investment decisions."
+    },
+    {
+      "id": "diversification",
+      "path": "Repository of Research/Finance/Papers/2025/The Case Against Diversification/The Case Against Diversification.pdf",
+      "title": "The Case Against Diversification",
+      "topic": "Finance",
+      "year": "2025",
+      "summary": "An examination of the arguments for concentrated investing and the role of diversification."
+    },
+    {
+      "id": "paper-12",
+      "path": "Repository of Research/Finance/Papers/2025/LESSONS FROM ‘25/LESSONS FROM ‘25.pdf",
+      "title": "Lessons from '25",
+      "topic": "Finance",
+      "year": "2025",
+      "summary": "A collaborative reflection on the 2025 Indian capital market, domestic and foreign flows, sector allocations, and investment lessons."
+    },
+    {
+      "id": "paper-9",
+      "path": "Repository of Research/Finance/Papers/2025/IF WE WERE THE GOVERNOR/IF WE WERE THE GOVERNOR.pdf",
+      "title": "If We Were The Governor",
+      "topic": "Finance",
+      "year": "2025",
+      "summary": "A collaborative counterfactual monetary-policy framework for India, examining inflation, growth, transmission, and financial stability."
+    },
+    {
+      "id": "paper-5",
+      "path": "Repository of Research/Finance/Papers/2025/From the Precipice of Investing/From the Precipice of Investing.pdf",
+      "title": "From the Precipice of Investing",
+      "topic": "Finance",
+      "year": "2025",
+      "summary": "A personal investment philosophy covering business analysis, capital preservation, concentration, leverage, and contrarian decision-making."
+    },
+    {
+      "id": "paper-8",
+      "path": "Repository of Research/Finance/Papers/2025/Equity outlook 2026/equity_outlook_2026.pdf",
+      "title": "Equity Outlook - 2026",
+      "topic": "Finance",
+      "year": "2025",
+      "summary": "A collaborative outlook for Indian equities entering 2026, focused on valuations, earnings delivery, and fundamental selection."
+    },
+    {
+      "id": "conviction-framework",
+      "path": "Repository of Research/Finance/Papers/2025/Conviction Concentration Framework/CCF.pdf",
+      "title": "Conviction Concentration Framework",
+      "topic": "Finance",
+      "year": "2025",
+      "summary": "A portfolio-allocation framework that maps multidimensional conviction scores to position-sizing limits and risk constraints."
+    },
+    {
+      "id": "paper-10",
+      "path": "Repository of Research/Finance/Papers/2025/BUILDING THE NEXT BERKSHIRE/BUILDING THE NEXT BERKSHIRE.pdf",
+      "title": "Building the Next Berkshire",
+      "topic": "Finance",
+      "year": "2025",
+      "summary": "A collaborative design for a modern conglomerate, built around permanent capital, governance, and long-term capital allocation."
+    },
+    {
+      "id": "paper-11",
+      "path": "Repository of Research/Finance/Papers/2025/At the Helm of Lehman/At the Helm of Lehman.pdf",
+      "title": "At The Helm of Lehman",
+      "topic": "Finance",
+      "year": "2025",
+      "summary": "A collaborative counterfactual analysis of Lehman Brothers, examining leverage, liquidity, funding, incentives, and governance."
+    },
+    {
+      "id": "paper-3",
+      "path": "Repository of Research/Finance/Papers/2025/A Philosophical Critique on Academic Methods of Financial Valuation/paper.pdf",
+      "title": "A Philosophical Critique on Academic Methods of Financial Valuation",
+      "topic": "Finance",
+      "year": "2025",
+      "summary": "A critique of the practical limits of discounted cash flow and dividend discount models in long-horizon business valuation."
+    },
+    {
+      "id": "vodafone-idea",
+      "path": "Repository of Research/Finance/Equity Research/Mid Cap/Telecom Sector/IDEA/IDEA_UW(P)_NEUTRAL(D)_02_01_2026.pdf",
+      "title": "Vodafone Idea",
+      "topic": "Equity research",
+      "year": "",
+      "summary": "Equity research on Vodafone Idea, classified in the archive under mid-cap telecom."
+    },
+    {
+      "id": "superconductors",
+      "path": "Repository of Research/Tech/SUPERCONDUCTING MATERIALS AS THE PHYSICAL SUBSTRATE OF QUANTUM COMPUTATION/SUPERCONDUCTING MATERIALS AS THE PHYSICAL SUBSTRATE OF QUANTUM COMPUTATION.pdf",
+      "title": "Superconducting Materials as the Physical Substrate of Quantum Computation",
+      "topic": "Technology",
+      "year": "2026",
+      "summary": "An exploration of superconducting materials as the physical substrate of quantum computation."
+    },
+    {
+      "id": "qubits",
+      "path": "Repository of Research/Tech/Semiconductor Materials for Qubits/Semiconductor Materials for Qubits.pdf",
+      "title": "Semiconductor Materials for Qubits",
+      "topic": "Technology",
+      "year": "2026",
+      "summary": "A study of semiconductor materials for qubits."
+    },
+    {
+      "id": "uefa",
+      "path": "Repository of Research/Tech/UEFA_DS/file.pdf",
+      "title": "Probabilistic Machine Learning Framework for Outcome Prediction and Knock-out Simulation in UEFA Champions League Matches",
+      "topic": "Technology",
+      "year": "2026",
+      "summary": "A probabilistic machine-learning framework for match outcome prediction and knockout simulation in the UEFA Champions League."
+    },
+    {
+      "id": "paper-24",
+      "path": "Repository of Research/Tech/PhonexOS/PhonexOS.pdf",
+      "title": "PhonexOS",
+      "topic": "Technology",
+      "year": "2025",
+      "summary": "PhonexOS “Ash”: an educational x86 real-mode operating system with a bootloader, custom filesystem, and command-driven shell."
+    },
+    {
+      "id": "paper-25",
+      "path": "Repository of Research/Tech/PhonexCoin/phx_whitepaper.pdf",
+      "title": "PhonexCoin",
+      "topic": "Technology",
+      "year": "2025",
+      "summary": "A prototype central bank digital currency combining blockchain infrastructure with a price oracle and monetary-policy mechanisms."
+    },
+    {
+      "id": "paper-23",
+      "path": "Repository of Research/Tech/Phonex-SLM/paper.pdf",
+      "title": "Phonex-SLM",
+      "topic": "Technology",
+      "year": "2025",
+      "summary": "The Pattern-Synthesis Model: a compact transformer experiment exploring authorial style and language generation from a small personal-essay dataset."
+    },
+    {
+      "id": "phonex-l1",
+      "path": "Repository of Research/Tech/Phonex-L1/Phonex-L1.pdf",
+      "title": "Phonex-L1",
+      "topic": "Technology",
+      "year": "2025",
+      "summary": "A proof-of-work blockchain project combining encrypted wallets, a block explorer, transaction history, and a graphical interface."
+    },
+    {
+      "id": "phonex-c2",
+      "path": "Repository of Research/Tech/PHONEXC2/phonexc2.pdf",
+      "title": "Phonex-C2: A Research-Grade Pure C Transformer Engine",
+      "topic": "Technology",
+      "year": "2026",
+      "summary": "A research-grade pure-C transformer engine."
+    },
+    {
+      "id": "phonex-c1",
+      "path": "Repository of Research/Tech/PHONEXC1/phonexc1.pdf",
+      "title": "Phonex-C1: A Hardened Pure-C Transformer Engine",
+      "topic": "Technology",
+      "year": "2026",
+      "summary": "A hardened pure-C transformer engine."
+    },
+    {
+      "id": "phonex-c0",
+      "path": "Repository of Research/Tech/PHONEX-C0/PHONEX-C0.pdf",
+      "title": "Phonex-C0: A Minimal Persistent Transformer Implemented in C99",
+      "topic": "Technology",
+      "year": "2026",
+      "summary": "A minimal persistent transformer implemented in C99."
+    },
+    {
+      "id": "kriti-nutrients",
+      "path": "Repository of Research/Finance/Equity Research/Small Cap/Agro Sector/Kriti Nutrients/Research_KRITINUT_24 12 2025_OW.pdf",
+      "title": "Kriti Nutrients",
+      "topic": "Equity research",
+      "year": "",
+      "summary": "Equity research on Kriti Nutrients, classified in the archive under small-cap agro."
+    },
+    {
+      "id": "paper-28",
+      "path": "Repository of Research/Tech/INDIA’S ULTIMATE CHANCE AT COMPUTATIONAL LEADERSHIP/INDIA’S ULTIMATE CHANCE AT COMPUTATIONAL LEADERSHIP.pdf",
+      "title": "India’s Ultimate Chance at Computational Leadership",
+      "topic": "Technology",
+      "year": "2026",
+      "summary": "A collaborative policy argument for strengthening India’s computational research, infrastructure, talent, and technological independence."
+    },
+    {
+      "id": "election-forecast",
+      "path": "Repository of Research/Tech/Forecasting the 2026 West Bengal Legislative Assembly Elections/Forecasting the 2026 West Bengal Legislative Assembly Elections.pdf",
+      "title": "Forecasting the 2026 West Bengal Legislative Assembly Elections",
+      "topic": "Technology",
+      "year": "2026",
+      "summary": "A forecasting study of the 2026 West Bengal Legislative Assembly elections."
+    },
+    {
+      "id": "nuclear-power",
+      "path": "Repository of Research/Tech/A Review of Nuclear Power as a Sustainable Energy Source/final.pdf",
+      "title": "A Review of Nuclear Power as a Sustainable Energy Source",
+      "topic": "Technology",
+      "year": "2026",
+      "summary": "A review of nuclear power as a sustainable energy source."
+    },
+    {
+      "id": "a-simulation-of-economic-distress-on-a-shipping-corporation",
+      "path": "Repository of Research/Finance/Papers/2026/a-simulation-of-economic-distress-on-a-shipping-corporation/a-simulation-of-economic-distress-on-a-shipping-corporation.pdf",
+      "title": "A Simulation of Economic Distress on a Shipping Corporation",
+      "topic": "Finance",
+      "year": "2026",
+      "summary": "We setup a fake company to simulate how the cost and budget sheets would be impacted by unforseen circumstances."
+    }
+  ],
+  "pages": [
+    {
+      "path": "Repository of Research/Finance/Equity Research/eq.html",
+      "title": "Equity research",
+      "links": [
+        [
+          "Repository of Research/Finance/Equity Research/Small Cap/sc.html",
+          "Small Cap"
+        ],
+        [
+          "Repository of Research/Finance/Equity Research/Mid Cap/mc.html",
+          "Mid Cap"
+        ]
+      ],
+      "documents": []
+    },
+    {
+      "path": "Repository of Research/Finance/Equity Research/Mid Cap/mc.html",
+      "title": "Mid-cap equity research",
+      "links": [
+        [
+          "Repository of Research/Finance/Equity Research/Mid Cap/Telecom Sector/telecom.html",
+          "Telecom Sector"
+        ]
+      ],
+      "documents": []
+    },
+    {
+      "path": "Repository of Research/Finance/Equity Research/Mid Cap/Telecom Sector/telecom.html",
+      "title": "Telecom sector",
+      "links": [],
+      "documents": [
+        "Repository of Research/Finance/Equity Research/Mid Cap/Telecom Sector/IDEA/IDEA_UW(P)_NEUTRAL(D)_02_01_2026.pdf"
+      ]
+    },
+    {
+      "path": "Repository of Research/Finance/Equity Research/Small Cap/Agro Sector/agro.html",
+      "title": "Agro sector",
+      "links": [],
+      "documents": [
+        "Repository of Research/Finance/Equity Research/Small Cap/Agro Sector/Kriti Nutrients/Research_KRITINUT_24 12 2025_OW.pdf"
+      ]
+    },
+    {
+      "path": "Repository of Research/Finance/Equity Research/Small Cap/sc.html",
+      "title": "Small-cap equity research",
+      "links": [
+        [
+          "Repository of Research/Finance/Equity Research/Small Cap/Agro Sector/agro.html",
+          "Agro Sector"
+        ]
+      ],
+      "documents": []
+    },
+    {
+      "path": "Repository of Research/Finance/finance.html",
+      "title": "Finance",
+      "links": [
+        [
+          "Repository of Research/Finance/Equity Research/eq.html",
+          "Equity Research"
+        ],
+        [
+          "Repository of Research/Finance/Papers/years.html",
+          "Papers"
+        ]
+      ],
+      "documents": []
+    },
+    {
+      "path": "Repository of Research/Finance/Papers/2025/2025.html",
+      "title": "Finance papers · 2025",
+      "links": [],
+      "documents": [
+        "Repository of Research/Finance/Papers/2025/A Philosophical Critique on Academic Methods of Financial Valuation/paper.pdf",
+        "Repository of Research/Finance/Papers/2025/Conviction Concentration Framework/CCF.pdf",
+        "Repository of Research/Finance/Papers/2025/From the Precipice of Investing/From the Precipice of Investing.pdf",
+        "Repository of Research/Finance/Papers/2025/The Case Against Diversification/The Case Against Diversification.pdf",
+        "Repository of Research/Finance/Papers/2025/The Irrelevance of Economics in the Business of Investing/The Irrelevance of Economics in the Business of Investing.pdf",
+        "Repository of Research/Finance/Papers/2025/Equity outlook 2026/equity_outlook_2026.pdf",
+        "Repository of Research/Finance/Papers/2025/IF WE WERE THE GOVERNOR/IF WE WERE THE GOVERNOR.pdf",
+        "Repository of Research/Finance/Papers/2025/BUILDING THE NEXT BERKSHIRE/BUILDING THE NEXT BERKSHIRE.pdf",
+        "Repository of Research/Finance/Papers/2025/At the Helm of Lehman/At the Helm of Lehman.pdf",
+        "Repository of Research/Finance/Papers/2025/LESSONS FROM ‘25/LESSONS FROM ‘25.pdf"
+      ]
+    },
+    {
+      "path": "Repository of Research/Finance/Papers/2026/2026.html",
+      "title": "Finance papers · 2026",
+      "links": [],
+      "documents": [
+        "Repository of Research/Finance/Papers/2026/HOW TO SAVE A BANK/HOW TO SAVE A BANK.pdf",
+        "Repository of Research/Finance/Papers/2026/BUILDING THE NEXT BLACKROCK/BUILDING THE NEXT BLACKROCK.pdf",
+        "Repository of Research/Finance/Papers/2026/Building the  next JPM/building the next jpm.pdf",
+        "Repository of Research/Finance/Papers/2026/An Appraisal of the Union Budget 2026–27/An Appraisal of the Union Budget 2026–27.pdf",
+        "Repository of Research/Finance/Papers/2026/Microeconomic Analysis of the Textile Industry in India/Microeconomic Analysis of the Textile Industry in India.pdf",
+        "Repository of Research/Finance/Papers/2026/Microeconomic Analysis of the Indian Iron & Steel Industry/MicroeconomicAnalysisof theIndianIron&Steel Industry.pdf",
+        "Repository of Research/Finance/Papers/2026/Portfolio Study/paper.pdf",
+        "Repository of Research/Finance/Papers/2026/Mapping Mister Market/paper.pdf",
+        "Repository of Research/Finance/Papers/2026/cost of hope/cost of hope.pdf",
+        "Repository of Research/Finance/Papers/2026/Statistical Digest of Asset Quality (2005-2025)/Statistical Digest of Asset Quality.pdf",
+        "Repository of Research/Finance/Papers/2026/a-simulation-of-economic-distress-on-a-shipping-corporation/a-simulation-of-economic-distress-on-a-shipping-corporation.pdf"
+      ]
+    },
+    {
+      "path": "Repository of Research/Finance/Papers/years.html",
+      "title": "Finance papers by year",
+      "links": [
+        [
+          "Repository of Research/Finance/Papers/2025/2025.html",
+          "2025"
+        ],
+        [
+          "Repository of Research/Finance/Papers/2026/2026.html",
+          "2026"
+        ]
+      ],
+      "documents": []
+    },
+    {
+      "path": "Repository of Research/repo.html",
+      "title": "Research by subject",
+      "links": [
+        [
+          "Repository of Research/Tech/tech.html",
+          "Tech"
+        ],
+        [
+          "Repository of Research/Finance/finance.html",
+          "Finance"
+        ]
+      ],
+      "documents": []
+    },
+    {
+      "path": "Repository of Research/Tech/tech.html",
+      "title": "Technology",
+      "links": [
+        [
+          "Repository of Research/Tech/2025/2025.html",
+          "2025"
+        ],
+        [
+          "Repository of Research/Tech/2026/2026.html",
+          "2026"
+        ]
+      ],
+      "documents": []
+    },
+    {
+      "path": "Repository of Research/Tech/2025/2025.html",
+      "title": "Technology papers · 2025",
+      "links": [],
+      "documents": [
+        "Repository of Research/Tech/PhonexOS/PhonexOS.pdf",
+        "Repository of Research/Tech/PhonexCoin/phx_whitepaper.pdf",
+        "Repository of Research/Tech/Phonex-SLM/paper.pdf",
+        "Repository of Research/Tech/Phonex-L1/Phonex-L1.pdf"
+      ]
+    },
+    {
+      "path": "Repository of Research/Tech/2026/2026.html",
+      "title": "Technology papers · 2026",
+      "links": [],
+      "documents": [
+        "Repository of Research/Tech/SUPERCONDUCTING MATERIALS AS THE PHYSICAL SUBSTRATE OF QUANTUM COMPUTATION/SUPERCONDUCTING MATERIALS AS THE PHYSICAL SUBSTRATE OF QUANTUM COMPUTATION.pdf",
+        "Repository of Research/Tech/Semiconductor Materials for Qubits/Semiconductor Materials for Qubits.pdf",
+        "Repository of Research/Tech/UEFA_DS/file.pdf",
+        "Repository of Research/Tech/PHONEXC2/phonexc2.pdf",
+        "Repository of Research/Tech/PHONEXC1/phonexc1.pdf",
+        "Repository of Research/Tech/PHONEX-C0/PHONEX-C0.pdf",
+        "Repository of Research/Tech/INDIA’S ULTIMATE CHANCE AT COMPUTATIONAL LEADERSHIP/INDIA’S ULTIMATE CHANCE AT COMPUTATIONAL LEADERSHIP.pdf",
+        "Repository of Research/Tech/Forecasting the 2026 West Bengal Legislative Assembly Elections/Forecasting the 2026 West Bengal Legislative Assembly Elections.pdf",
+        "Repository of Research/Tech/A Review of Nuclear Power as a Sustainable Energy Source/final.pdf"
+      ]
+    }
+  ]
+}

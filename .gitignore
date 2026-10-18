@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+tmp/
+~$*
+~WRL*.tmp
+.~lock.*#
+*Zone.Identifier*
+.DS_Store
+Thumbs.db
+debug.log
+.publisher.lock
+*.publisher-tmp
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/

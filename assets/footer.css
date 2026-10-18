@@ -1,0 +1,8 @@
+body:not(.surprise-page){min-height:100vh;min-height:100dvh;box-sizing:border-box;display:flex;flex-direction:column}
+body:not(.surprise-page)>main.content-wrapper{width:100%;flex-shrink:0}
+.site-footlabel{width:100%;max-width:600px;margin:auto auto 16px;padding-top:32px;text-align:center;font:9pt/1.5 "Courier New",monospace;color:inherit;opacity:.6}
+.site-footlabel a,.site-footlabel a:visited{color:inherit;text-underline-offset:3px}
+.site-footlabel a:hover{opacity:1}
+.site-footlabel a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.surprise-page{position:relative;padding-bottom:75px}
+.surprise-page .site-footlabel{position:absolute;bottom:16px;left:0;right:0;margin:0 auto}
