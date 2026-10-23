@@ -14,6 +14,8 @@ INTRO='<p class="introduction">I am pursuing a Master of Business Administration
 CONTACT='<h2 class="contact-heading">Contact</h2><p class="contact"><a href="mailto:adityamishra2007mum@gmail.com">adityamishra2007mum@gmail.com</a><br><a href="mailto:aditya.mishra10@nmims.in">aditya.mishra10@nmims.in</a></p>'
 
 def url(target,current):
+    if target.startswith('https://'):
+        return escape(target,quote=True)
     return quote(os.path.relpath(ROOT/target,(ROOT/current).parent).replace('\\','/'),safe='/')
 
 def anchor(target,title,current):
@@ -41,8 +43,11 @@ def paper_table(papers,current,search=False):
         size=(ROOT/p['path']).stat().st_size
         size_label=f'{size/1048576:.1f} MB' if size>=1048576 else f'{round(size/1024)} KB'
         file=f'<a href="{url(p["path"],current)}" aria-label="Open PDF: {escape(p["title"],quote=True)}">PDF</a><small>{size_label}</small>'
+        if p.get('url'):
+            label=escape(p.get('link_label','Website'),quote=True)
+            file=f'<a href="{url(p["url"],current)}" aria-label="Open {label}: {escape(p["title"],quote=True)}">{label}</a>'
         metadata=('<td class="paper-topic">'+escape(p['topic'])+'</td>' if show_topic else '')+('<td class="paper-year">'+(p['year'] or '—')+'</td>' if show_year else '')
-        rows.append(f'<tr class="paper" data-topic="{escape(p["topic"])}" data-year="{p["year"]}" data-search="{escape(p["summary"],quote=True)}"><th scope="row">{anchor(p["path"],p["title"],current)}</th>{metadata}<td class="paper-file">{file}</td></tr>')
+        rows.append(f'<tr class="paper" data-topic="{escape(p["topic"])}" data-year="{p["year"]}" data-search="{escape(p["summary"],quote=True)}"><th scope="row">{anchor(p.get("url") or p["path"],p["title"],current)}</th>{metadata}<td class="paper-file">{file}</td></tr>')
     caption='Research documents; a dash indicates an unverified publication year.' if search else str(len(papers))+' documents'+(' · '+next(iter(years)) if len(years)==1 and next(iter(years)) else '')
     headers='<th scope="col">Title</th>'+('<th class="paper-topic" scope="col">Topic</th>' if show_topic else '')+('<th class="paper-year" scope="col">Year</th>' if show_year else '')+'<th class="paper-file" scope="col">File</th>'
     return '<table class="archive-table document-table"><caption'+(' class="visually-hidden"' if search else '')+'>'+escape(caption)+'</caption><thead><tr>'+headers+'</tr></thead><tbody'+(' id="catalogue"' if search else '')+'>'+''.join(rows)+'</tbody></table>'
@@ -128,7 +133,7 @@ def map_collection(path,ancestors=()):
     count=len(collection_documents(path))
     children=''.join('<li>'+map_collection(child,(*ancestors,path))+'</li>' for child,_ in page['links'])
     documents=[p for p in DATA['papers'] if p['path'] in page['documents']]
-    children+=''.join('<li>'+anchor(p['path'],p['title'],'sitemap.html')+' <small>(PDF)</small></li>' for p in sorted(documents,key=lambda p:p['title'].casefold()))
+    children+=''.join('<li>'+anchor(p.get('url') or p['path'],p['title'],'sitemap.html')+' <small>('+escape(p.get('link_label','Website') if p.get('url') else 'PDF')+')</small></li>' for p in sorted(documents,key=lambda p:p['title'].casefold()))
     return '<details><summary>'+escape(page['title'])+f' <small>({count})</small></summary><p>'+anchor(path,'Open collection','sitemap.html')+'</p><ul>'+children+'</ul></details>'
 
 source=(ROOT/'templates/Repository of Research/repo.html').read_text(encoding='utf-8')

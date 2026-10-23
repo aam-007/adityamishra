@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Mishra - Equity Research</title>
+    <style>
+        /* --- SHARED RETRO STYLES --- */
+        :root {
+            /* Classic Paper Theme */
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --link-color: #0000EE;
+            --visited-color: #551A8B;
+            --active-color: #FF0000;
+            --hr-color: #000000;
+        }
+
+        body.retro-dark {
+            /* Terminal Theme */
+            --bg-color: #000000;
+            --text-color: #00FF00;
+            --link-color: #00FF00;
+            --visited-color: #008F11;
+            --active-color: #FFFFFF;
+            --hr-color: #00FF00;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .content-wrapper {
+            max-width: 600px;
+            margin: 5vh auto 0;
+            text-align: center;
+        }
+
+        /* Navigation Header */
+        .nav-header {
+            text-align: left;
+            margin-bottom: 40px;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .back-link {
+            text-decoration: none;
+            font-size: 12pt;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+
+        .sub-heading {
+            font-size: 14pt;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        hr {
+            border: 0;
+            border-top: 2px solid var(--hr-color);
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        /* Menu */
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 16pt;
+            font-weight: bold;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: var(--visited-color);
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 80px;
+            font-size: 10pt;
+            font-family: "Courier New", Courier, monospace;
+            border-top: 1px solid var(--hr-color);
+            padding-top: 20px;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-family: "Courier New", Courier, monospace;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 0;
+        }
+
+        .toggle-btn:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        
+        <div class="nav-header">
+            <a href="../years.html" class="back-link">&lt;-- Back to Years Menu</a>
+        </div>
+
+        <h1>Aditya Mishra</h1>
+        <div class="sub-heading">Papers</div>
+        
+        <hr>
+
+        <div class="menu">
+            <a href="HOW TO SAVE A BANK/HOW TO SAVE A BANK.pdf">How To Save a Bank</a>
+            <a href="BUILDING THE NEXT BLACKROCK/BUILDING THE NEXT BLACKROCK.pdf">Building The Next BlackRock</a>
+            <a href="Building the  next JPM/building the next jpm.pdf">Building The Next J.P. Morgan</a>
+            <a href="An Appraisal of the Union Budget 2026–27/An Appraisal of the Union Budget 2026–27.pdf">An Appraisal of the Union Budget 2026–27</a>
+            <a href="Microeconomic Analysis of the Textile Industry in India/Microeconomic Analysis of the Textile Industry in India.pdf">Microeconomic Analysis of the Textile Industry in India</a>
+            <a href="Microeconomic Analysis of the Indian Iron & Steel Industry/MicroeconomicAnalysisof theIndianIron&Steel Industry.pdf">Microeconomic Analysis of the Indian Iron & Steel Industry</a>
+            <a href="Portfolio Study/paper.pdf">A Comparative Study of Traditional and Modern Approaches to Portfolio Construction and Performance Evaluation</a>
+            <a href="Mapping Mister Market/paper.pdf">Mapping Mister Market</a>
+            <a href="cost of hope/cost of hope.pdf">Fool's Paradise</a>
+        </div>
+
+        <div class="footer">
+            <button class="toggle-btn" id="theme-toggle" aria-pressed="false" hidden>[ Switch to Terminal Mode ]</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

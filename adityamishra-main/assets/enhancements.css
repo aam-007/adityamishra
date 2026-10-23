@@ -1,0 +1,82 @@
+/* Functional additions only. Original page typography, colors, spacing and layout live in original-*.css. */
+html[data-theme="terminal"]{--bg-color:#000000;--text-color:#00FF00;--link-color:#00FF00;--visited-color:#008F11;--active-color:#FFFFFF;--hr-color:#00FF00;color-scheme:dark}
+html[data-theme="paper"]{color-scheme:light}
+[hidden]{display:none!important}
+.skip-link{position:absolute;top:-100px;left:20px;background:var(--bg-color);padding:8px}
+.skip-link:focus{top:10px}
+:focus-visible{outline:2px solid var(--text-color);outline-offset:4px}
+h2.sub-heading{font-weight:normal;margin-top:0}
+.introduction{max-width:540px;font-size:12pt;line-height:1.75;text-align:justify;text-align-last:left;hyphens:auto;margin:36px auto 40px}
+.contact{font-family:"Courier New",monospace;font-size:10pt;line-height:1.7;margin:0 0 25px;overflow-wrap:anywhere}
+.name-link,.name-link:visited{color:var(--text-color);text-decoration:none}
+.name-link:hover{text-decoration:underline}
+#contact-window{box-sizing:border-box;width:calc(100% - 40px);max-width:600px;max-height:calc(100dvh - 40px);overflow:auto;padding:24px;background:var(--bg-color);color:var(--text-color);border:2px solid var(--hr-color);font-family:"Times New Roman",Times,serif;text-align:left}
+#contact-window::backdrop{background:rgba(0,0,0,.55)}
+.window-header{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--hr-color);padding-bottom:14px}
+.window-header h2{font-size:16pt;margin:0;text-transform:uppercase;letter-spacing:1px}
+.window-header form{margin:0}
+.window-close{font-family:"Courier New",monospace;font-size:10pt;background:var(--bg-color);color:var(--text-color);border:0;padding:8px 0 8px 8px;cursor:pointer;white-space:nowrap}
+.window-close:hover{background:var(--text-color);color:var(--bg-color)}
+#contact-window .introduction{margin:24px 0;max-width:none}
+.contact-heading{font-size:12pt;font-weight:normal;font-family:"Courier New",monospace;margin:24px 0 10px}
+#contact-window .contact{margin-bottom:0}
+.contact-is-open{overflow:hidden}
+.error-message h2{font-size:16pt;font-weight:normal;margin:0 0 20px}
+.error-message p{font-size:12pt;line-height:1.6;margin:0 0 30px}
+.error-search{margin:0 auto 35px;max-width:400px;font:10pt "Courier New",monospace}
+.error-search label{display:block;margin-bottom:10px}
+.error-search p{display:flex;gap:8px;margin:0}
+.error-search input,.error-search button{box-sizing:border-box;font:inherit;background:var(--bg-color);color:var(--text-color);border:1px solid var(--hr-color);padding:9px;min-height:38px}
+.error-search input{flex:1;min-width:0;width:100%}
+.error-search button{cursor:pointer}
+.error-search button:hover{background:var(--text-color);color:var(--bg-color)}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.archive-table{width:100%;border-collapse:collapse;text-align:left;font-size:12pt;line-height:1.45;table-layout:fixed;margin:0 0 24px}
+.archive-table th,.archive-table td{padding:12px 8px;border-bottom:1px solid var(--hr-color);vertical-align:top;overflow-wrap:anywhere}
+.archive-table thead th{font:10pt "Courier New",monospace;border-bottom:2px solid var(--hr-color);padding-top:0;padding-bottom:10px}
+.archive-table tbody th{font-weight:normal}
+.archive-table th:first-child,.archive-table td:first-child{padding-left:0}
+.archive-table th:last-child,.archive-table td:last-child{padding-right:0}
+.document-table th:first-child{width:56%}
+.document-table th:nth-child(2){width:18%}
+.document-table th:nth-child(3){width:11%}
+.document-table th:nth-child(4){width:15%}
+.document-table td:not(:first-child){font:9pt/1.5 "Courier New",monospace}
+.document-table small{display:block;font-size:8pt;margin-top:4px;white-space:nowrap}
+.directory-table th:first-child{width:75%}
+.directory-table td,.directory-table thead th:last-child{text-align:right}
+.directory-table td{font:10pt "Courier New",monospace}
+.archive-search-link{font:10pt "Courier New",monospace;margin-top:25px}
+.document-table caption{text-align:left;font:10pt "Courier New",monospace;padding-bottom:20px}
+.document-table th:first-child{width:auto}
+.document-table th.paper-topic{width:18%}
+.document-table th.paper-year{width:11%}
+.document-table th.paper-file{width:16%}
+@media(max-width:480px){.archive-table th,.archive-table td{padding:10px 4px}.document-table{font-size:11pt}.document-table th:first-child{width:49%}.document-table th:nth-child(2){width:21%}.document-table th:nth-child(3){width:13%}.document-table th:nth-child(4){width:17%}.document-table td:not(:first-child),.archive-table thead th{font-size:8pt}.document-table small{font-size:7pt}}
+@media(max-width:480px){.document-table .paper-topic{display:none}.document-table th:first-child{width:auto}.document-table th.paper-year{width:16%}.document-table th.paper-file{width:21%}}
+#filters{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:end;margin-bottom:25px;font:10pt "Courier New",monospace}
+#filters label{display:flex;flex-direction:column;gap:5px;text-align:left}
+#filters input,#filters select,#filters button{font:inherit;background:var(--bg-color);color:var(--text-color);border:1px solid var(--hr-color);padding:6px;max-width:100%}
+#filters button{cursor:pointer}
+#result-count,#empty{font:10pt/1.5 "Courier New",monospace}
+@media(max-width:400px){#filters label{max-width:100%}}
+.legacy-toggle{margin-right:24px}
+html[data-research-view="legacy"] .archive-table{display:block;margin:0 0 24px;table-layout:auto;text-align:center}
+html[data-research-view="legacy"] .archive-table thead,html[data-research-view="legacy"] .archive-table caption,html[data-research-view="legacy"] .archive-table td{display:none}
+html[data-research-view="legacy"] .archive-table tbody{display:flex;flex-direction:column;gap:15px}
+html[data-research-view="legacy"] .archive-table tr{display:block}
+html[data-research-view="legacy"] .archive-table tbody th{display:block;border:0;padding:0;width:auto;font: bold 16pt "Times New Roman",Times,serif;line-height:normal;text-align:center}
+@media(max-width:480px){.legacy-toggle{display:block;margin:0 auto 16px}}
+.sitemap-pages,.sitemap-tree{text-align:left;font-size:12pt;line-height:1.6}
+.sitemap-pages ul{list-style:none;padding:0;margin:0 0 32px}
+.sitemap-pages li{margin:8px 0}
+.sitemap-tree h3{font:normal 12pt "Courier New",monospace;margin:0 0 18px}
+.sitemap-tree details{margin:12px 0}
+.sitemap-tree summary{cursor:pointer;overflow-wrap:anywhere}
+.sitemap-tree details ul{padding-left:22px;margin:12px 0;list-style:none;border-left:1px solid var(--hr-color)}
+.sitemap-tree li{margin:10px 0;overflow-wrap:anywhere}
+.sitemap-tree details p{margin:8px 0 0 18px;font:10pt "Courier New",monospace}
+.sitemap-tree small{font:9pt "Courier New",monospace}
+.sitemap-controls button{font:10pt "Courier New",monospace;background:var(--bg-color);color:var(--text-color);border:0;padding:6px 8px 6px 0;cursor:pointer}
+.sitemap-controls button:hover{text-decoration:underline}
+.sitemap-github{margin:32px 0 0;font:10pt "Courier New",monospace}
