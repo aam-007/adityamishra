@@ -10,7 +10,7 @@ import re
 ROOT=Path(__file__).resolve().parents[1]
 BASE='https://aam-007.github.io/adityamishra/'
 DATA=json.loads((ROOT/'content.json').read_text(encoding='utf-8'))
-INTRO='<p class="introduction">I am pursuing a Master of Business Administration in Technology Management and Data Science at the engineering school of NMIMS, Mumbai. My interests span financial research, portfolio theory, and data engineering, informed by my experience as a research intern at Helios Capital.</p>'
+INTRO='<p class="introduction">I am pursuing a Bachelor of Technology in Data Science and a Master of Business Administration in Technology Management at the engineering school of NMIMS, Mumbai. My interests span financial research, portfolio theory, and data engineering, informed by my experience as a research intern at Helios Capital.</p>'
 CONTACT='<h2 class="contact-heading">Contact</h2><p class="contact"><a href="mailto:adityamishra2007mum@gmail.com">adityamishra2007mum@gmail.com</a><br><a href="mailto:aditya.mishra10@nmims.in">aditya.mishra10@nmims.in</a></p>'
 
 def url(target,current):
