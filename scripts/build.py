@@ -175,7 +175,7 @@ poem_data=json.dumps(poems,ensure_ascii=False,separators=(',',':')).replace('&',
 first_work=first['title']+(' (excerpt)' if first['excerpt'] else '')
 (ROOT/'cheeky.html').write_text('''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>A little poetry | Aditya Mishra</title><meta name="description" content="A quiet moment of romantic poetry."><meta name="robots" content="noindex, follow">
+<title>How Did We Get Here?</title><meta name="description" content="A quiet moment of romantic poetry."><meta name="robots" content="noindex, follow">
 '''+favicon('cheeky.html')+'''
 <script src="assets/theme.js"></script><link rel="stylesheet" href="assets/surprise.css"></head>
 <body class="surprise-page"><main><h1 class="visually-hidden">A little poetry</h1><figure class="poem"><blockquote cite="'''+escape(first['sourceUrl'],quote=True)+'''"><p id="surprise-message">'''+escape(first['text'])+'''</p></blockquote><figcaption><p id="poem-author">— '''+escape(first['author'])+'''</p><a id="poem-work" href="'''+escape(first['sourceUrl'],quote=True)+'''" title="Read the cited edition">'''+escape(first_work)+'''</a></figcaption></figure><p class="return-link"><a href="index.html">back to site</a></p></main>
