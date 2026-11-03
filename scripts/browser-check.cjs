@@ -83,6 +83,10 @@ const http = require('node:http');
   await plain.goto(base);
   await plain.getByRole('link',{name:'About & contact',exact:true}).click();
   assert.equal(await plain.locator('a[href^="mailto:"]:visible').count(),2);
+  await plain.goto(base+'/cheeky.html');
+  assert.equal(await plain.locator('#poem-author').textContent(),'— Lord Byron');
+  assert.ok((await plain.locator('#surprise-message').textContent()).startsWith('She walks in beauty'));
+  assert.equal(await plain.locator('#surprise-icon').count(),0);
   const blocked=await browser.newContext();
   await blocked.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new Error('Storage disabled')}})});
   const storagePage=await blocked.newPage();
@@ -167,7 +171,11 @@ const http = require('node:http');
   assert.equal(await page.getByRole('link',{name:'GitHub repository ↗'}).getAttribute('href'),'https://github.com/aam-007/adityamishra');
   await page.getByRole('button',{name:'[ Expand all ]',exact:true}).click();
   assert.equal(await page.locator('.sitemap-tree details:not([open])').count(),0);
-  assert.equal(await page.locator('.sitemap-tree a[href$=".pdf"]:visible').count(),documentCount);
+  const sitemapDocuments=page.locator('.sitemap-tree li > a:visible');
+  assert.deepEqual(
+    await sitemapDocuments.evaluateAll(links=>links.map(link=>decodeURIComponent(link.getAttribute('href'))).sort()),
+    catalogue.papers.map(paper=>paper.url||paper.path).sort()
+  );
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
   await page.getByRole('button',{name:'[ Collapse all ]',exact:true}).click();
   assert.equal(await page.locator('.sitemap-tree details[open]').count(),0);
@@ -209,7 +217,9 @@ const http = require('node:http');
   assert.equal(new URL(surprisePage.url()).pathname,'/Repository%20of%20Research/repo.html');
   for(let i=0;i<3;i++)await surprisePage.keyboard.press('Space');
   await surprisePage.waitForURL('**/cheeky.html');
-  assert.equal(await surprisePage.locator('#surprise-icon').isVisible(),true);
+  assert.equal(await surprisePage.locator('#surprise-icon').count(),0);
+  assert.ok((await surprisePage.locator('#poem-author').textContent()).length>0);
+  assert.ok((await surprisePage.locator('#poem-work').getAttribute('href')).startsWith('https://'));
   assert.ok((await surprisePage.locator('#surprise-message').textContent()).length>0);
   const firstMessage=await surprisePage.locator('#surprise-message').textContent();
   assert.equal(await surprisePage.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(255, 255, 255)');
@@ -227,12 +237,39 @@ const http = require('node:http');
   assert.notEqual(await surprisePage.locator('#surprise-message').textContent(),firstMessage);
   assert.equal(await surprisePage.locator('body').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(0, 0, 0)');
   await surprisePage.screenshot({path:'tmp/cheeky-terminal.png',fullPage:true});
-  await surprisePage.addInitScript(()=>{Math.random=()=>.055;sessionStorage.removeItem('portfolio-last-surprise');});
+  await surprisePage.addInitScript(()=>{Math.random=()=>0;sessionStorage.removeItem('portfolio-last-poem');});
   await surprisePage.reload();
-  assert.equal(await surprisePage.locator('#surprise-icon').getAttribute('aria-label'),'ASCII birthday cake');
-  assert.equal(await surprisePage.locator('#surprise-message').textContent(),'happy birthday, if its your birthday!');
+  assert.equal(await surprisePage.locator('#surprise-message').textContent(),"She walks in beauty, like the night\nOf cloudless climes and starry skies;\nAnd all that's best of dark and bright\nMeet in her aspect and her eyes:\nThus mellow'd to that tender light\nWhich heaven to gaudy day denies.");
+  assert.equal(await surprisePage.locator('#poem-author').textContent(),'— Lord Byron');
   assert.equal(await surprisePage.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
-  await surprisePage.screenshot({path:'tmp/surprise-cake.png',fullPage:true});
+  await surprisePage.screenshot({path:'tmp/poetry-byron.png',fullPage:true});
+  const renderer=fs.readFileSync(path.join(root,'assets/surprise-message.js'),'utf8');
+  for(const width of [320,375,1280]){
+    await surprisePage.setViewportSize({width,height:812});
+    for(const theme of ['paper','terminal']){
+      await surprisePage.evaluate(({renderer,theme})=>{
+        document.documentElement.dataset.theme=theme;
+        const poems=JSON.parse(document.getElementById('poetry-data').textContent);
+        if(poems.length!==100)throw new Error('Expected 100 poems');
+        const random=Math.random;
+        try{
+          for(let i=0;i<poems.length;i++){
+            sessionStorage.removeItem('portfolio-last-poem');
+            Math.random=()=>(i+.5)/poems.length;
+            new Function(renderer)();
+            const poem=poems[i];
+            if(document.getElementById('surprise-message').textContent!==poem.text ||
+               document.getElementById('poem-author').textContent!=='— '+poem.author ||
+               document.getElementById('poem-work').href!==poem.sourceUrl)
+              throw new Error('Poem and attribution mismatch: '+poem.id);
+            if(document.documentElement.scrollWidth>innerWidth ||
+               document.querySelector('.poem').getBoundingClientRect().top<0)
+              throw new Error('Poetry overflow: '+poem.id);
+          }
+        }finally{Math.random=random;}
+      },{renderer,theme});
+    }
+  }
   await surpriseContext.close();
   const touchContext=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,isMobile:true});
   await touchContext.addInitScript(()=>Object.defineProperty(window,'sessionStorage',{get(){throw new Error('Storage disabled');}}));

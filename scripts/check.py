@@ -5,9 +5,11 @@ from urllib.parse import urlsplit, unquote
 import json
 import sys
 import re
+from check_poems import validate as validate_poetry
 
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
+validate_poetry(json.loads((ROOT/'romantic-poems.json').read_text(encoding='utf-8')))
 class Page(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True); self.urls=[]; self.ids=set(); self.title=False; self.main=0; self.h1=0; self.description=False

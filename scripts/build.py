@@ -6,10 +6,13 @@ import hashlib
 import json
 import os
 import re
+from check_poems import validate as validate_poetry
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE='https://aam-007.github.io/adityamishra/'
 DATA=json.loads((ROOT/'content.json').read_text(encoding='utf-8'))
+POETRY=json.loads((ROOT/'romantic-poems.json').read_text(encoding='utf-8'))
+validate_poetry(POETRY)
 INTRO='<p class="introduction">I am pursuing a Bachelor of Technology in Data Science and a Master of Business Administration in Technology Management at the engineering school of NMIMS, Mumbai. My interests span financial research, portfolio theory, and data engineering, informed by my experience as a research intern at Helios Capital.</p>'
 CONTACT='<h2 class="contact-heading">Contact</h2><p class="contact"><a href="mailto:adityamishra2007mum@gmail.com">adityamishra2007mum@gmail.com</a><br><a href="mailto:aditya.mishra10@nmims.in">aditya.mishra10@nmims.in</a></p>'
 
@@ -164,10 +167,17 @@ notfound=re.sub(r'(href|src)="(assets/[^"]+|sitemap\.html)"',lambda m:m[1]+'="'+
 (ROOT/'404.html').write_text(notfound,encoding='utf-8')
 print('Built original-design pages, search catalogue, redirect, sitemap, and 404 page.')
 
+poems=[{key:p[key] for key in ('id','author','title','text','excerpt')} | {
+    'sourceUrl':POETRY['sources'][p['source']]['url']+'#:~:text='+quote(p['text'].splitlines()[0],safe='')
+} for p in POETRY['poems']]
+first=poems[0]
+poem_data=json.dumps(poems,ensure_ascii=False,separators=(',',':')).replace('&','\\u0026').replace('<','\\u003c').replace('>','\\u003e')
+first_work=first['title']+(' (excerpt)' if first['excerpt'] else '')
 (ROOT/'cheeky.html').write_text('''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>A little surprise | Aditya Mishra</title><meta name="description" content="A little surprise."><meta name="robots" content="noindex, follow">
+<title>A little poetry | Aditya Mishra</title><meta name="description" content="A quiet moment of romantic poetry."><meta name="robots" content="noindex, follow">
 '''+favicon('cheeky.html')+'''
-<script src="assets/theme.js"></script><link rel="stylesheet" href="assets/surprise.css"><link rel="stylesheet" href="assets/footer.css"><script src="assets/footer.js" defer></script></head>
-<body class="surprise-page"><main><h1 id="surprise-icon">:)</h1><p id="surprise-message">a cheeky one, aren't you?</p><a href="index.html">back to site</a></main><script src="assets/surprise-message.js"></script>'''+footlabel('cheeky.html')+'''</body></html>
+<script src="assets/theme.js"></script><link rel="stylesheet" href="assets/surprise.css"></head>
+<body class="surprise-page"><main><h1 class="visually-hidden">A little poetry</h1><figure class="poem"><blockquote cite="'''+escape(first['sourceUrl'],quote=True)+'''"><p id="surprise-message">'''+escape(first['text'])+'''</p></blockquote><figcaption><p id="poem-author">— '''+escape(first['author'])+'''</p><a id="poem-work" href="'''+escape(first['sourceUrl'],quote=True)+'''" title="Read the cited edition">'''+escape(first_work)+'''</a></figcaption></figure><p class="return-link"><a href="index.html">back to site</a></p></main>
+<script id="poetry-data" type="application/json">'''+poem_data+'''</script><script src="assets/surprise-message.js"></script></body></html>
 ''',encoding='utf-8',newline='\n')
