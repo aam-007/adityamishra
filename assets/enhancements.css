@@ -8,16 +8,16 @@ html[data-theme="paper"]{color-scheme:light}
 h2.sub-heading{font-weight:normal;margin-top:0}
 .introduction{max-width:540px;font-size:12pt;line-height:1.75;text-align:justify;text-align-last:left;hyphens:auto;margin:36px auto 40px}
 .contact{font-family:"Courier New",monospace;font-size:10pt;line-height:1.7;margin:0 0 25px;overflow-wrap:anywhere}
-.name-link,.name-link:visited{color:var(--text-color);text-decoration:none}
-.name-link:hover{text-decoration:underline}
+.card-entry{margin:0 0 12px}
+.card-link,.card-link:visited{display:inline-flex;align-items:center;justify-content:center;gap:6px;box-sizing:border-box;min-height:44px;max-width:100%;padding:4px 8px;color:var(--text-color);opacity:.65;font:11pt "Times New Roman",Times,serif;text-decoration:none}
+.card-link:hover,.card-link:focus-visible{opacity:1;text-decoration:underline;text-underline-offset:3px}
 #contact-window{box-sizing:border-box;width:calc(100% - 40px);max-width:600px;max-height:calc(100dvh - 40px);overflow:auto;padding:24px;background:var(--bg-color);color:var(--text-color);border:2px solid var(--hr-color);font-family:"Times New Roman",Times,serif;text-align:left}
 #contact-window::backdrop{background:rgba(0,0,0,.55)}
-.window-header{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--hr-color);padding-bottom:14px}
-.window-header h2{font-size:16pt;margin:0;text-transform:uppercase;letter-spacing:1px}
+.window-header{display:flex;align-items:center;justify-content:flex-end;margin-top:-8px}
 .window-header form{margin:0}
 .window-close{font-family:"Courier New",monospace;font-size:10pt;background:var(--bg-color);color:var(--text-color);border:0;padding:8px 0 8px 8px;cursor:pointer;white-space:nowrap}
 .window-close:hover{background:var(--text-color);color:var(--bg-color)}
-#contact-window .introduction{margin:24px 0;max-width:none}
+#contact-window .introduction{margin:12px 0 24px;max-width:none}
 .contact-heading{font-size:12pt;font-weight:normal;font-family:"Courier New",monospace;margin:24px 0 10px}
 #contact-window .contact{margin-bottom:0}
 .contact-is-open{overflow:hidden}

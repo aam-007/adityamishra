@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .paper{fill:#fff}
+    .initial{fill:#111}
+    .cursor{fill:#008f11}
+    @media(prefers-color-scheme:dark){
+      .paper{fill:#000}
+      .initial,.cursor{fill:#0f0}
+    }
+  </style>
+  <rect class="paper" width="32" height="32" rx="2"/>
+  <path class="initial" fill-rule="evenodd" d="M3 25v-2h3L14 5h3l9 18h3v2H18v-2h3l-2-5h-8l-2 5h3v2H3zm9-10h6l-3-7z"/>
+  <path class="cursor" d="M23 28h6v2h-6z"/>
+</svg>

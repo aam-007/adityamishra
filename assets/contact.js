@@ -1,16 +1,18 @@
 (() => {
-  const link = document.getElementById('contact-open');
+  const links = document.querySelectorAll('a[aria-controls="contact-window"]');
   const window = document.getElementById('contact-window');
-  if (!link || !window || typeof window.showModal !== 'function') return;
-  link.addEventListener('click', event => {
+  if (!links.length || !window || typeof window.showModal !== 'function') return;
+  let opener;
+  links.forEach(link => link.addEventListener('click', event => {
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
     event.preventDefault();
+    opener = link;
     window.showModal();
     document.body.classList.add('contact-is-open');
-  });
+  }));
   window.addEventListener('close', () => {
     document.body.classList.remove('contact-is-open');
-    link.focus();
+    opener?.focus();
   });
   window.addEventListener('click', event => {
     const bounds = window.getBoundingClientRect();

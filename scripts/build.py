@@ -21,6 +21,9 @@ def url(target,current):
 def anchor(target,title,current):
     return f'<a href="{url(target,current)}">{escape(title)}</a>'
 
+def favicon(current):
+    return f'<link rel="icon" type="image/svg+xml" href="{url("assets/favicon.svg",current)}">'
+
 def collection_documents(path,ancestors=()):
     if path in ancestors:
         raise ValueError('Circular research collection: '+path)
@@ -68,6 +71,7 @@ def build(current,source,title,description):
     source=re.sub(r'<title>.*?</title>',f'<title>{escape(title)}</title>',source)
     canonical=BASE+quote(current,safe='/')
     meta=f'<meta name="description" content="{escape(description,quote=True)}">\n<link rel="canonical" href="{canonical}">\n<meta property="og:title" content="{escape(title,quote=True)}"><meta property="og:description" content="{escape(description,quote=True)}"><meta property="og:type" content="website"><meta property="og:url" content="{canonical}"><meta name="twitter:card" content="summary">\n<script src="{url("assets/theme.js",current)}"></script><script src="{url("assets/catalogue.js",current)}" defer></script>'
+    meta+='\n'+favicon(current)
     eggs=f'<script src="{url("assets/surprise.js",current)}" defer></script>'
     meta+=f'\n<link rel="stylesheet" href="{url("assets/footer.css",current)}"><script src="{url("assets/footer.js",current)}" defer></script>'
     if current=='research.html' or any(p['path']==current for p in DATA['pages']):
@@ -96,8 +100,8 @@ for template in sorted((ROOT/'templates').rglob('*.html')):
     title='Aditya Mishra' if not page else 'Aditya Mishra - '+page['title']
     description='Aditya Mishra: financial research, portfolio theory, and data engineering. NMIMS MPSTME, Mumbai.' if not page else 'Browse '+page['title']+' in Aditya Mishra’s research repository.'
     if current=='index.html':
-        source=source.replace('<h1>Aditya Mishra</h1>','<h1><a class="name-link" id="contact-open" href="contact.html" aria-haspopup="dialog" aria-controls="contact-window">Aditya Mishra</a></h1>')
-        window='<dialog id="contact-window" aria-labelledby="contact-title"><header class="window-header"><h2 id="contact-title">Aditya Mishra</h2><form method="dialog"><button class="window-close" aria-label="Close contact window" autofocus>[ Close ]</button></form></header>'+INTRO+CONTACT+'</dialog>'
+        source=source.replace('<h1>Aditya Mishra</h1>','<h1>Aditya Mishra</h1><p class="card-entry"><a class="card-link" id="contact-open" href="contact.html" aria-haspopup="dialog" aria-controls="contact-window">About &amp; contact <span aria-hidden="true">&rarr;</span></a></p>')
+        window='<dialog id="contact-window" aria-label="About &amp; contact"><header class="window-header"><form method="dialog"><button class="window-close" aria-label="Close contact window" autofocus>[ Close ]</button></form></header>'+INTRO+CONTACT+'</dialog>'
         source=source.replace('</body>',window+'\n<script src="assets/contact.js" defer></script>\n</body>')
     elif page:
         documents=[p for p in DATA['papers'] if p['path'] in page['documents']]
@@ -146,7 +150,7 @@ build('sitemap.html',source,'Aditya Mishra - Sitemap','Explore all site pages, r
 
 # Preserve old addresses while removing the obsolete broken links.
 legacy='Repository of Research/Finance/Papers/paper.html'
-(ROOT/legacy).write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Papers | Aditya Mishra</title><meta http-equiv="refresh" content="0;url=years.html"><link rel="canonical" href="'+BASE+'Repository%20of%20Research/Finance/Papers/years.html"></head><body><p><a href="years.html">Browse papers by year</a>.</p></body></html>',encoding='utf-8')
+(ROOT/legacy).write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Papers | Aditya Mishra</title>'+favicon(legacy)+'<meta http-equiv="refresh" content="0;url=years.html"><link rel="canonical" href="'+BASE+'Repository%20of%20Research/Finance/Papers/years.html"></head><body><p><a href="years.html">Browse papers by year</a>.</p></body></html>',encoding='utf-8')
 paths=['index.html','research.html','contact.html','sitemap.html']+[p['path'] for p in DATA['pages']]
 (ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>'+escape(BASE+quote(p,safe='/'))+'</loc></url>' for p in paths)+'</urlset>',encoding='utf-8')
 source=(ROOT/'templates/index.html').read_text(encoding='utf-8')
@@ -163,6 +167,7 @@ print('Built original-design pages, search catalogue, redirect, sitemap, and 404
 (ROOT/'cheeky.html').write_text('''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>A little surprise | Aditya Mishra</title><meta name="description" content="A little surprise."><meta name="robots" content="noindex, follow">
+'''+favicon('cheeky.html')+'''
 <script src="assets/theme.js"></script><link rel="stylesheet" href="assets/surprise.css"><link rel="stylesheet" href="assets/footer.css"><script src="assets/footer.js" defer></script></head>
 <body class="surprise-page"><main><h1 id="surprise-icon">:)</h1><p id="surprise-message">a cheeky one, aren't you?</p><a href="index.html">back to site</a></main><script src="assets/surprise-message.js"></script>'''+footlabel('cheeky.html')+'''</body></html>
 ''',encoding='utf-8',newline='\n')
